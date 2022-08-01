@@ -1,1 +1,3 @@
 # game here
+
+print("salom")
