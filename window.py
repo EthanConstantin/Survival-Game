@@ -11,7 +11,7 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Survival Game")
 
 def draw_window():
-    WIN.blit((0, 0, 0))
+    WIN.fill((0,255,0))
 
     pygame.display.update()
 
