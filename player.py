@@ -6,16 +6,18 @@ class player:
         self.x = 0
         self.y = 0
         self.pos = [self.x,self.y]
-        
+
     def movementhandler(self,keys):
         if keys[pygame.K_LEFT]:
             self.pos[0] -= 5
         if keys[pygame.K_RIGHT]:
             self.pos[0] += 5
         if keys[pygame.K_UP]:
-            self.y += 5
+            self.pos[1] -= 5
         if keys[pygame.K_DOWN]:
-            self.y -= 5
+            self.pos[1] += 5
+    
+        
     
 
 

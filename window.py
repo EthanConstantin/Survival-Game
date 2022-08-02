@@ -2,7 +2,7 @@ import pygame
 import os
 import random
 from screeninfo import get_monitors
-from main import player
+from player import player
 
 FPS = 165
 WIDTH = [i.width for i in get_monitors()][-1]
