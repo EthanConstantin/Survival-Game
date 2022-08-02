@@ -12,10 +12,8 @@ HEIGHT = HEIGHT[-1]
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Survival Game")
 
-SPACE = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "space_background.jpg")), (WIDTH, HEIGHT))
-
 def draw_window():
-    WIN.blit(SPACE, (0, 0))
+    WIN.blit((0, 0, 0))
 
     pygame.display.update()
 
