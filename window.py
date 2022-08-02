@@ -23,7 +23,7 @@ def main():
         pygame.time.Clock().tick(FPS)  # Caps framerate
         second += 1 / FPS  # Keeps track of time
         pos = pygame.mouse.get_pos()
-
+        print(pos)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 raise SystemExit
