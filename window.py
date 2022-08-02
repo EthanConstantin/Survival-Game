@@ -4,11 +4,13 @@ import random
 from screeninfo import get_monitors
 
 
+import pygame
+
+print("hello world")
+
 FPS = 165
-WIDTH = [i.width for i in get_monitors()]
-WIDTH = WIDTH[-1]
-HEIGHT = [i.height for i in get_monitors()]
-HEIGHT = HEIGHT[-1]
+WIDTH = [i.width for i in get_monitors()][-1]
+HEIGHT = [i.height for i in get_monitors()][-1]
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Survival Game")
 
