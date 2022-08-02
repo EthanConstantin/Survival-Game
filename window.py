@@ -4,10 +4,6 @@ import random
 from screeninfo import get_monitors
 
 
-import pygame
-
-print("hello world")
-
 FPS = 165
 WIDTH = [i.width for i in get_monitors()][-1]
 HEIGHT = [i.height for i in get_monitors()][-1]
