@@ -1,6 +1,6 @@
 import pygame
 from setting import *
-
+from player import player
 
 
 class Tile(pygame.sprite.Sprite):
@@ -20,15 +20,23 @@ class level:
         self.create_map();
     
     def create_map(self):
+        # looping through each element in the world map
         for row_i,row in enumerate(world_map):
             for col_i, col in enumerate(row):
+                # calculating world pos 
                 x = col_i * TILESIZE
                 y = row_i *TILESIZE
+                if x == 0 and y == 0:
+                    # (0,0) - pos of the map | [visi_sprites] - placing player into this group | self.obs_sprite - giving player this property
+                    self.player = player((0,0),[self.visible_sprites],self.obstacle_sprites)
                 if col == 'T':
-                    Tile((x,y),[self.visible_sprites])
+                    # this puts a sprite on elements 'T' and putting it into both the groups
+                    Tile((x,y),[self.visible_sprites,self.obstacle_sprites])
+
+
 
 
     def run(self):
         self.visible_sprites.draw(self.display_surface)
-
+        self.visible_sprites.update()
 
