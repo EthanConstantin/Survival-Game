@@ -1,12 +1,11 @@
 import pygame
 import random
 
-class player:
-    def __init__(self,img):
+class player(pygame.sprite.Sprite):
+    def __init__(self,pos,group,img):
+        super().__init__(group)
         self.img = img;
-        self.x = 0
-        self.y = 0
-        self.pos = [self.x,self.y]
+        self.rect = self.img.get_rect(topleft = pos)
 
     def movementhandler(self):
         keys = pygame.key.get_pressed()
