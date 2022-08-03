@@ -1,4 +1,5 @@
 import pygame
+import random
 
 class player:
     def __init__(self,img):
@@ -7,7 +8,9 @@ class player:
         self.y = 0
         self.pos = [self.x,self.y]
 
-    def movementhandler(self,keys):
+    def movementhandler(self):
+        keys = pygame.key.get_pressed()
+
         if keys[pygame.K_LEFT]:
             self.pos[0] -= 5
         if keys[pygame.K_RIGHT]:
