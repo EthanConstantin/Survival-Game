@@ -44,7 +44,7 @@ class player(pygame.sprite.Sprite):
                     if self.direction.y > 0: #moving down
                         self.rect.bottom = sprite.rect.top
                     if self.direction.y < 0: #moving up
-                        self.rect.top = self.rect.bottom
+                        self.rect.top = sprite.rect.bottom
 
     def move(self,speed):
       self.rect.y += self.direction.y * speed

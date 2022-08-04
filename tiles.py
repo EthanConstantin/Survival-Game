@@ -8,7 +8,7 @@ class Tile(pygame.sprite.Sprite):
     def __init__(self,pos,groups):
         super().__init__(groups); # initialises getting the inheritance from sprite.Sprite
         self.image = pygame.image.load("assets/tree.png").convert_alpha() #apprently using this for every image load improves performance
-        self.rect = self.image.get_rect(topleft = pos)
+        self.rect = self.image.get_rect(bottomleft = pos)
 
 class level:
     def __init__(self):
