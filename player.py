@@ -51,8 +51,7 @@ class player(pygame.sprite.Sprite):
       self.collision('vertical')
       self.rect.x += self.direction.x *speed
       self.collision('horizontal')
+      
     def update(self):
         self.movementhandler()
         self.move(self.speed)
-        # displays player coords
-        debug(self.rect.x,self.rect.y)

@@ -3,6 +3,7 @@ import os
 import random
 from screeninfo import get_monitors
 from tiles import level
+from debug import debug,consoledebug
 
 #FPS = 165
 #WIDTH = [i.width for i in get_monitors()][-1]
@@ -16,14 +17,15 @@ class Game():
         self.FPS = 60;
         self.WIDTH  = [i.width for i in get_monitors()][-1]
         self.HEIGHT = [i.height for i in get_monitors()][-1]
-        self.WIN = pygame.display.set_mode((self.WIDTH,self.HEIGHT)) # test resolution will be changed later
+        self.WIN = pygame.display.set_mode((1280,720)) # test resolution will be changed later
         pygame.display.set_caption("Survival Game")
         self.Level = level()
 
     def run(self):
-
+        
         while True:
          self.WIN.fill((255,255,255))
+         #self.WIN.blit(pygame.transform.scale(pygame.image.load("assets/grass.png").convert_alpha(),(self.WIDTH,self.HEIGHT)), (0,0))  
          clock.tick(self.FPS)  # Caps framerate
          self.Level.run()
          for event in pygame.event.get():
@@ -32,8 +34,9 @@ class Game():
                     return 0; #returning 0 means success
             if event.type == pygame.QUIT:
                 raise SystemExit
-            print(f"event type = {event.type}")
-
+        
+            
+         consoledebug(clock.get_fps())
          pygame.display.flip() # you can pass rectangles into this method to only update specified regions // stuff in rectangles are updated 
 
 
