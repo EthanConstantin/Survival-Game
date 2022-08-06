@@ -17,5 +17,5 @@ def worldmapgen():
 # this can be put into coordinates; the topleft tile would be (0,0), the one to the right would be (0,64)
 world_map = [[worldmapgen() for x in range(100)] for x in range(100)]
 
-for i,v in enumerate(world_map):
-    print(v)
+#for i,v in enumerate(world_map):
+#    print(v)

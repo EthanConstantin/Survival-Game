@@ -3,7 +3,7 @@ import os
 import random
 from screeninfo import get_monitors
 from tiles import level
-from debug import debug,consoledebug
+
 
 #FPS = 165
 #WIDTH = [i.width for i in get_monitors()][-1]
@@ -34,9 +34,6 @@ class Game():
                     return 0; #returning 0 means success
             if event.type == pygame.QUIT:
                 raise SystemExit
-        
-            
-         consoledebug(clock.get_fps())
          pygame.display.flip() # you can pass rectangles into this method to only update specified regions // stuff in rectangles are updated 
 
 

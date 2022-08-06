@@ -13,6 +13,7 @@ class Ycamerasort(pygame.sprite.Group):
         self.offset.x = player.rect.centerx - self.half_width
         self.offset.y = player.rect.centery - self.half_height
 
-        for sprite in self.sprites():
+        # magic to render which sprite should be on top
+        for sprite in sorted(self.sprites(), key = lambda sprite: sprite.rect.centery): 
             offset_pos = sprite.rect.topleft - self.offset
             self.surface.blit(sprite.image, offset_pos)
